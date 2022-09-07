@@ -19,8 +19,8 @@ type tipo =
   | TyBool
   | TyFn of tipo * tipo
   | TyPair of tipo * tipo
-  | TyRef of tipo (* Adicao do novo valor Tref *)
-  | TyUnit(* Adicao do novo valor Unit *)
+  | TyRef of tipo (* Adicao do novo tipo Tref *)
+  | TyUnit(* Adicao do novo tipo Unit *)
 
 
 type ident = string 
