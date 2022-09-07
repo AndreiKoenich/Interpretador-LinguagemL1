@@ -57,7 +57,7 @@ type valor =
   | VPair of valor * valor
   | VClos  of ident * expr * renv
   | VRclos of ident * ident * expr * renv 
-  | VRef (* Adicao do novo valor l, que representa um posicao de memoria. *)
+  | VRef (* Adicao do novo valor l, que representa uma posicao de memoria. *)
   | VSkip (* Adicao do valor skip, que e o unico do tipo unit. *)
 and 
   renv = (ident * valor) list 
