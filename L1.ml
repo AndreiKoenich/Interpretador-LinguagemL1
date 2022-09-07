@@ -2,7 +2,7 @@
    Nome: Pedro Company Beck          Cartao: 00324055
    Nome: Pietro Benati Carrara       Cartao: XXXXXXXX
      
-   Trabalho de Implementacao - Semantica Formal - 2022/02 *)
+   Trabalho de Implementacao - Semantica Formal - 2022/01 *)
 
 (*++++++++++++++++++++++++++++++++++++++*)
 (*  Interpretador para L1               *)
