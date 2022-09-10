@@ -2,15 +2,11 @@
    UNIVERSIDADE FEDERAL DO RIO GRANDE DO SUL 
    
    Trabalho de Implementação - Semântica Formal - Semestre 2022/01 
-*)
 
-(* 
    Nome: Andrei Pochmann Koenich     Cartão: 00308680
    Nome: Pedro Company Beck          Cartão: 00324055
    Nome: Pietro Benati Carrara       Cartão: 00318995
-*) 
 
-(* 
    Referências:
    https://www.youtube.com/watch?v=Zukb_gsW1RU
    https://www.youtube.com/watch?v=jSrt_1FR7YI
