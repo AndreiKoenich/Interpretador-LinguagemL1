@@ -1,5 +1,5 @@
 (* 
-   UNIVERSIDADE FEDERAL DO RIO GRANDE DO SUL  - Semestre 2022/01
+   UNIVERSIDADE FEDERAL DO RIO GRANDE DO SUL - Semestre 2022/01
    
    Curso de Ciência da Computação
    
