@@ -245,7 +245,7 @@ let rec mem_set (mem:mem) (key:address) value =
     [] -> raise (MemoryError "Erro: atribuição em posição de memória não existente.")
   | (pos, old_val) :: rest -> if (pos = key) then (pos, value) :: rest else (pos, old_val) :: mem_set rest key value
 
-(* Função retornar o próximo endereço de memória que deve ser ocupado *)                                                                              
+(* Função para retornar o próximo endereço da memória que deve ser ocupado *)                                                                              
 let nova_posicao (mem:mem) : address = List.length mem
 
 (**+++++++++++++++++++++++++++++++++++++++++*)
