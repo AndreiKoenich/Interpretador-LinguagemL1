@@ -3,9 +3,9 @@
    
    Trabalho de Implementação - Semântica Formal - Semestre 2022/01 
 
-   Nome: Andrei Pochmann Koenich     Cartão: 00308680
-   Nome: Pedro Company Beck          Cartão: 00324055
-   Nome: Pietro Benati Carrara       Cartão: 00318995
+   Andrei Pochmann Koenich     Cartão: 00308680
+   Pedro Company Beck          Cartão: 00324055
+   Pietro Benati Carrara       Cartão: 00318995
 
    Referências:
    https://www.youtube.com/watch?v=Zukb_gsW1RU
