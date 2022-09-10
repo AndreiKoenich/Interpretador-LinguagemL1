@@ -409,7 +409,7 @@ a := 10;
 *)
 let testeSomaRefDeref =
   Let("a", TyRef TyInt, New(Num 5),
-      Let("b", TyRef TyInt, Binop(Sum, Dref(Var "a"), Num 1),
+      Let("b", TyInt, Binop(Sum, Dref(Var "a"), Num 1),
           Seq(
             Asg(Var "a", Num 10),
             Binop(Sum, Dref(Var "a"), Var "b")
