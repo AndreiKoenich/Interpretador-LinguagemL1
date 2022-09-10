@@ -208,9 +208,10 @@ let rec typeinfer (tenv:tenv) (e:expr) : tipo =
 exception MemoryError of string
 
 let insere_mem (mem:mem) (v: valor) : mem =
-  (match mem with
-     [] -> [(0,v)]
-   | _ -> (((fst (List.hd mem))+1),v) :: mem)
+  (List.length mem, v) :: mem
+  (* match mem with
+    [] -> (0,v) :: []
+   |() -> (((fst (List.hd mem))+1),v) :: mem *)
 
 let rec lookup_mem (mem:mem) (address: address) : valor =
   (match mem with
@@ -226,10 +227,7 @@ let rec mem_set (mem:mem) (key:address) value =
     [] -> raise (MemoryError "Atribuição em posição de memória não existente")
   | (pos, old_val) :: rest -> if (pos = key) then (pos, value) :: rest else (pos, old_val) :: mem_set rest key value
 
-let nova_posicao (mem:mem) : address =
-  (match mem with
-     [] -> 0
-   | _ -> (fst(List.hd mem))+1)
+let nova_posicao (mem:mem) : address = List.length mem
 
 (**+++++++++++++++++++++++++++++++++++++++++*)
 (*                 AVALIADOR                *)
@@ -343,7 +341,8 @@ let rec eval (renv:renv) (e:expr) (mem:mem) : valorMem =
          VNum(address) -> VSkip, (mem_set mem'' address value)
        | _ -> raise (TypeError "Tentativa de atribuição em endereço não-inteiro de memória!"))
 
-  | Whl(_, _) -> raise (TypeError "Not implemented yet!")
+  | Whl(econd, eloop) ->
+      eval renv (If(econd, Seq(eloop, Whl(econd, eloop)), Skip)) mem
 
 
 
@@ -416,8 +415,31 @@ let testeSomaRefDeref =
             Binop(Sum, Dref(Var "a"), Var "b")
           )))
 
+(*
+  let x = new input in
+  let y = new 1 in
+  let z = new 1 in
+  while (!z <= !x) {
+    y := !y * !z;
+    z = !z + 1
+  };
+  !y
+  *)
+let testFatorial input =
+  Let("x", TyRef TyInt, New(Num input),
+      Let("y", TyRef TyInt, New(Num 1),
+          Let("z", TyRef TyInt, New(Num 1),
+              Seq(Whl(Binop(Leq, Dref(Var "z"), Dref(Var "x")),
+                  Seq(Asg(Var "y", Binop(Mult, Dref(Var "y"), Dref(Var "z"))),
+                      Asg(Var "z", Binop(Sum, Dref(Var "z"), Num 1)))),
+            Dref(Var "y")))))
 
- (* typeinfer [] Skip;; *)
+(*Valor esperado: 6*)
+let testFat3 = testFatorial 3
+(*Valor esperado: 120*)
+let testFat4 = testFatorial 5
+
+(* typeinfer [] Skip;; *)
 (* typeinfer [] teste1;; *)
 (* typeinfer [] teste2;; *)
 (* typeinfer [] teste3;; *)
