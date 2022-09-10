@@ -14,9 +14,9 @@
 *)
 
 (*++++++++++++++++++++++++++++++++++++++*)
-(*  Interpretador para L1               *)
+(*     Interpretador para L1            *)
 (*   - inferência de tipos              *)
-(*   - avaliador big step com ambiente  *)
+(*   - avaliador big step com ambientes *)
 (*   - construções imperativas          *)
 (*++++++++++++++++++++++++++++++++++++++*)
 
