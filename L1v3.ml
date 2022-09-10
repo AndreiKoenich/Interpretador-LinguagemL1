@@ -36,7 +36,6 @@ type tipo =
   | TyRef of tipo (* Adicao do novo tipo Tref *)
   | TyUnit(* Adicao do novo tipo Unit *)
 
-
 type ident = string
 
 type op = Sum | Sub | Mult | Eq | Gt | Lt | Geq | Leq
@@ -85,7 +84,7 @@ and
 (* Representação dos endereços de memória com valores inteiros *)    
 type address = int
   
-(* Representação da memória como uma lista de pares ordenados de endereços e valores. *)
+(* Representação da memória como uma lista de pares ordenados de endereços e valores *)
 type mem = (address * valor) list
 
 (* Adição do tipo que representa um par, contendo um valor e uma memória *)
@@ -152,7 +151,7 @@ let rec typeinfer (tenv:tenv) (e:expr) : tipo =
   | Snd e1 ->
       (match typeinfer tenv e1 with
          TyPair(_,t2) -> t2
-       | _ -> raise (TypeError "Erro: fst espera tipo par"))
+       | _ -> raise (TypeError "Erro: fst espera tipo par."))
 
   (* TIf  *)
   | If(e1,e2,e3) ->
