@@ -1,7 +1,9 @@
 (* 
-   UNIVERSIDADE FEDERAL DO RIO GRANDE DO SUL 
+   UNIVERSIDADE FEDERAL DO RIO GRANDE DO SUL  - Semestre 2022/01
    
-   Trabalho de Implementação - Semântica Formal - Semestre 2022/01 
+   Curso de Ciência da Computação
+   
+   Trabalho de Implementação - Semântica Formal - Turma B
 
    Andrei Pochmann Koenich     Cartão: 00308680
    Pedro Company Beck          Cartão: 00324055
