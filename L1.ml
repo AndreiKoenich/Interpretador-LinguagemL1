@@ -82,7 +82,7 @@ exception BugParser
   
 exception BugTypeInfer
   
-  (**+++++++++++++++++++++++++++++++++++++++++*)
+(**+++++++++++++++++++++++++++++++++++++++++*)
 (*         INFERÊNCIA DE TIPOS              *)
 (*++++++++++++++++++++++++++++++++++++++++++*)
 
@@ -331,7 +331,7 @@ let teste7 = Seq(Skip,True)
 let teste8 = Asg(teste1,Num 3301)
 let teste9 = Asg(teste2,True)
 
- (* typeinfer [] Skip;; *) 
+(* typeinfer [] Skip;; *) 
 (* typeinfer [] teste1;; *)    
 (* typeinfer [] teste2;; *)    
 (* typeinfer [] teste3;; *)
