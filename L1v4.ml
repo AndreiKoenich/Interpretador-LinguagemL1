@@ -281,7 +281,7 @@ let rec eval (renv:renv) (e:expr) (mem:mem) : valorMem =
   | Binop(oper,e1,e2) ->
       let v1 = eval renv e1 mem in
       let v2 = eval renv e2 (snd v1) in
-      compute oper v1 v2 mem
+      compute oper v1 v2 (snd v2)
 
   | Pair(e1,e2) ->
       let v1 = eval renv e1 mem in
