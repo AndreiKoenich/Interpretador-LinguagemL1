@@ -185,6 +185,8 @@ let rec typeinfer (tenv:tenv) (e:expr) : tipo =
       then typeinfer tenv_com_tf e2
       else raise (TypeError "Erro: tipo da função diferente do declarado.")
   | LetRec _ -> raise BugParser
+  
+  (* Novas regras do sistema de tipos são adicionadas a partir desse ponto *)      
 
   (* TAtr *)
   | Asg(e1,e2) ->
@@ -192,8 +194,6 @@ let rec typeinfer (tenv:tenv) (e:expr) : tipo =
          TyRef(t) -> if (typeinfer tenv e2) = t then TyUnit
            else raise (TypeError "Erro: tipo do argumento está errado." )
        | _ -> raise (TypeError "Erro: tipo referencia era esperado."))
-      
-  (* Novas regras do sistema de tipos são adicionadas a partir desse ponto *)      
 
   (* Regra TSkip *)
   | Skip -> TyUnit
